@@ -7,7 +7,7 @@ namespace TurboCollections
         private T [] _items = Array.Empty<T>();
         private int _size = 0;
         
-        TurboList()
+        public TurboList()
         {
             
         }
