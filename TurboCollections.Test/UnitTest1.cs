@@ -1,18 +1,29 @@
+using System.ComponentModel;
 using NUnit.Framework;
 
 namespace TurboCollections.Test
 {
-    public class Tests
+    public class TurboListTests
     {
-        [SetUp]
-        public void Setup()
+        [Test]
+        public void NewListIsEmpty()
         {
+            var list = new TurboList<float>();
+            Assert.Zero(list.Count());
         }
 
         [Test]
-        public void Test1()
+        public void AddingElementIncreasesCountToOne()
         {
-            Assert.Pass();
+            var list = new TurboList<float>();
+            list.Add(5);
+            Assert.AreEqual(1, list.Count());
+        }
+
+        [Test]
+        public void AddElementCanBeGet()
+        {
+            
         }
     }
 }

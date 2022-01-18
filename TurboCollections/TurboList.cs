@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace TurboCollections
 {
@@ -9,7 +10,7 @@ namespace TurboCollections
         
         public TurboList()
         {
-            
+
         }
 
         public int Count()
@@ -19,35 +20,59 @@ namespace TurboCollections
 
         public void Add(T item)
         {
+
             T[] array = _items;
             int size = _size;
-
-            if (size < array.Length)
+            if (_size < _items.Length)
             {
                 _size = size + 1;
                 array[size] = item;
             }
+            
             else
             {
-                
+                T[] newArray = new T[size * 2];
+
+                for (int i = 0; i < _size; i++)
+                {
+                    newArray[i] = _items[i];
+                }
+
+                _items = newArray;
+                newArray[size] = item;
             }
         }
 
         public T Get(int index)
         {
-            if (_items.Length <= index)
+            if (_items.Length < index)
             {
                 return _items[index];
             }
-            else
-            {
-                throw new System.Exception("index outside range of List");    
-            }
+            
+            throw new System.Exception("index outside range of List");
         }
 
+        public void Clear()
+        {
+            _items = Array.Empty<T>();
+            _size = 0;
+        }
+        
         void RemoveAt(int index)
         {
             
+        }
+
+        bool Contains(T item)
+        {
+            var temp = item;
+            foreach (var el in _items)
+            {
+                
+            }
+
+            return false;
         }
     }
 }
