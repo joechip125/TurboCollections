@@ -9,7 +9,7 @@ namespace TurboCollections.Test
         public void NewListIsEmpty()
         {
             var list = new TurboList<float>();
-            Assert.Zero(list.Count());
+            Assert.Zero(list.Count);
         }
 
         [Test]
@@ -17,7 +17,7 @@ namespace TurboCollections.Test
         {
             var list = new TurboList<float>();
             list.Add(5);
-            Assert.AreEqual(1, list.Count());
+            Assert.AreEqual(1, list.Count);
         }
 
         [Test]

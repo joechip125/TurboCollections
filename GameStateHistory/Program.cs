@@ -6,28 +6,48 @@ namespace GameStateHistory
     class Program
     {
         public static TurboStack<int> levelStack = new TurboStack<int>();
-        public static string CurrentLocation = "MainMenu";
+        public static string CurrentLocation = "Main Menu";
+
+        public static int nextLevel = 1;
         
         static void Main()
         {
-            
+           
         }
 
-        private static void InitStack(int stackCount)
-        {
-            for (int i = 0; i < stackCount; i++)
-            {
-                levelStack.Push(i);
-            }
-        }
+   
 
         private static void SomeText()
         {
             levelStack.Push(levelStack.Peek() + 1);
             Console.WriteLine("You are here: " + CurrentLocation);
             Console.WriteLine("What do you want to do?");
-            Console.WriteLine("(0) Go to level ");
+            Console.WriteLine("(0) Go to level " + nextLevel);
+            Console.WriteLine("(1) Go to level ");
             
+            if (CurrentLocation != "Main Menu")
+            {
+                Console.WriteLine("(b) Go back to main menu");
+            }
+            
+
+            var str = Console.ReadLine();
+            int i = 0;
+            
+            if (int.TryParse(str, out i))
+            {
+                
+            }
+            else if (CurrentLocation != "Main Menu" && str == "b")
+            {
+                
+            }
+
+            else
+            {
+                Console.WriteLine("Invalid selection, try again");
+            }
+
         }
 
         
