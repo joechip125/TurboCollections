@@ -8,47 +8,39 @@ namespace TurboCollections
         
         private T [] _items = Array.Empty<T>();
         
+        public int end = 0;    // write index
+        public int start = 0;  // read index
         
-        void EnsureSize(int size)
-        {
-            if (_items.Length >= size)
-            {
-                return;
-            }
-
-            int newSize = Math.Max(size, _items.Length * 2);
-
-            T[] newArray = new T[newSize];
-
-            for (int i = 0; i < Count; i++)
-            {
-                newArray[i] = _items[i];
-            }
-
-            _items = newArray;
-        }
+        
         
         public void Enqueue(T item)
         {
-            EnsureSize(Count +1);
-            
+            CollectionUtil.EnsureSize(ref _items, Count + 1);
+
+            if (end > Count)
+            {
+                end = 0;
+            }
+
+            Count++;
+            _items[end++] = item;
         }
 
         public T Peek()
         {
-            return _items[0];
+            return _items[start];
         }
 
         public T Dequeue()
         {
-            T item = _items[0];
-            
-            _items[0] = default;
-
-            for (int i = Count; i >= 0; i--)
+            if (start > Count)
             {
-                _items[i] = _items[i - 1];
+                start = 0;
             }
+            T item = _items[start];
+            
+            
+            _items[start++] = default;
             
             return item;
         }
@@ -59,6 +51,10 @@ namespace TurboCollections
             {
                 _items[i] = default;
             }
+
+            Count = 0;
+            start = 0;
+            end = 0;
         }
     }
 }

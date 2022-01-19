@@ -12,31 +12,11 @@ namespace TurboCollections
             _items = new T[8];
             Count = 8;
         }
-
         
-
         public void Push(T item)
         {
-            Count++;
-            
-            if (Count < _items.Length)
-            {
-                _items[Count] = item;
-            }
-            
-            else if (Count > _items.Length)
-            {
-                T[] array = new T[Count * 2];
-
-                for (int i = 0; i < _items.Length; i++)
-                {
-                    array[i] = _items[i];
-                }
-
-                _items = array;
-                _items[Count] = item;
-                Count *= 2;
-            }
+            CollectionUtil.EnsureSize(ref _items, Count + 1);
+            _items[Count++] = item;
         }
 
         public T Peek()
@@ -46,6 +26,7 @@ namespace TurboCollections
 
         public T Pop()
         {
+            //    return _items[--Count];
             T item = _items[Count -1];
             _items[Count -1] = default!;
             Count--;

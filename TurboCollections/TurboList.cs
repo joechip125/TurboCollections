@@ -9,29 +9,10 @@ namespace TurboCollections
     {
         private T [] _items = Array.Empty<T>();
         public int Count { get; private set; }
-
-        void EnsureSize(int size)
-        {
-            if (_items.Length >= size)
-            {
-                return;
-            }
-
-            int newSize = Math.Max(size, _items.Length * 2);
-
-            T[] newArray = new T[newSize];
-
-            for (int i = 0; i < Count; i++)
-            {
-                newArray[i] = _items[i];
-            }
-
-            _items = newArray;
-        }
-
+        
         public void Add(T item)
         {
-            EnsureSize(Count + 1);
+            CollectionUtil.EnsureSize(ref _items, Count + 1);
             _items[Count++] = item;
         }
 
@@ -107,7 +88,7 @@ namespace TurboCollections
         {
             if (index >= Count)
             {
-                EnsureSize(index + 1);
+                CollectionUtil.EnsureSize(ref _items, Count + 1);
                 Count = index + 1;
             }
             _items[index] = item;
