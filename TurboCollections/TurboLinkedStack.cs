@@ -7,11 +7,11 @@ namespace TurboCollections
     {
         public Node<T> Next;
         public Node<T> Previous;
-        public T someData;
+        public T Data;
         
         public Node(T d)
         {
-            someData = d;
+            Data = d;
             Next = null;
         }
     }
@@ -26,9 +26,10 @@ namespace TurboCollections
             Head = new Node<T>(headValue);
         }
 
-        public void Remove()
+        public void RemoveFromFront()
         {
-            
+            Node<T> n = Head.Next;
+            Head = n;
         }
         
         public void PrintList()
@@ -36,13 +37,13 @@ namespace TurboCollections
             Node<T> n = Head;
             while (n != null) 
             {
-                Console.Write(n.someData + " ");
+                Console.Write(n.Data + " ");
                 n = n.Next;
             }
         }
         
         
-        public void Insert(T someValue)
+        public void InsertAtFront(T someValue)
         {
             Node<T> newNode = new Node<T>(someValue)
             {

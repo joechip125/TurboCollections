@@ -10,11 +10,16 @@ namespace GameStateHistory
 
         public static int nextLevel = 1;
 
-        private static TurboLinkedStack<int> stack = new (5);
+        private static TurboLinkedStack<int> stack = new (1);
         
         static void Main()
         {
-           
+           stack.InsertAtFront(2);
+           stack.InsertAtFront(3);
+           stack.InsertAtFront(4);
+           stack.InsertAtFront(5);
+           stack.RemoveFromFront();
+           stack.PrintList();
         }
 
    
