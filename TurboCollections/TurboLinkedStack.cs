@@ -26,10 +26,17 @@ namespace TurboCollections
             Head = new Node<T>(headValue);
         }
 
-        public void Pop()
+        public T Peek()
         {
-            Node<T> n = Head.Next;
-            Head = n;
+            return Head.Data;
+        }
+        
+        public T Pop()
+        {
+            T data = Head.Data;
+            Head = Head.Next;
+
+            return data;
         }
         
         public void PrintList()
