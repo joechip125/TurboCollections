@@ -14,10 +14,10 @@ namespace GameStateHistory
         
         static void Main()
         {
-           stack.InsertAtFront(2);
-           stack.InsertAtFront(3);
-           stack.InsertAtFront(4);
-           stack.InsertAtFront(5);
+           stack.Push(2);
+           stack.Push(3);
+           stack.Push(4);
+           stack.Push(5);
            stack.RemoveFromFront();
            stack.PrintList();
         }

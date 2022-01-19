@@ -6,7 +6,7 @@ namespace TurboCollections
     public class Node<T>
     {
         public Node<T> Next;
-        public Node<T> Previous;
+    //    public Node<T> Previous;
         public T Data;
         
         public Node(T d)
@@ -43,7 +43,7 @@ namespace TurboCollections
         }
         
         
-        public void InsertAtFront(T someValue)
+        public void Push(T someValue)
         {
             Node<T> newNode = new Node<T>(someValue)
             {
@@ -51,6 +51,11 @@ namespace TurboCollections
             };
 
             Head = newNode;
+        }
+        
+        void DeleteList()
+        {
+            Head = null;
         }
     }
 }
