@@ -18,7 +18,7 @@ namespace GameStateHistory
            stack.Push(3);
            stack.Push(4);
            stack.Push(5);
-           stack.RemoveFromFront();
+           stack.Pop();
            stack.PrintList();
         }
 

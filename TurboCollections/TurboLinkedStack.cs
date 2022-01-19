@@ -26,7 +26,7 @@ namespace TurboCollections
             Head = new Node<T>(headValue);
         }
 
-        public void RemoveFromFront()
+        public void Pop()
         {
             Node<T> n = Head.Next;
             Head = n;
