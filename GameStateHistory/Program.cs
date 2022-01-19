@@ -9,6 +9,8 @@ namespace GameStateHistory
         public static string CurrentLocation = "Main Menu";
 
         public static int nextLevel = 1;
+
+        private static TurboLinkedStack<int> stack = new (5);
         
         static void Main()
         {

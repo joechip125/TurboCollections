@@ -3,15 +3,15 @@
 namespace TurboCollections
 {
 
-    public class Node
+    public class Node<T>
     {
-        public Node Next;
-        public Node Previous;
-        public int data;
+        public Node<T> Next;
+        public Node<T> Previous;
+        public T someData;
         
-        public Node(int d)
+        public Node(T d)
         {
-            data = d;
+            someData = d;
             Next = null;
         }
     }
@@ -19,46 +19,37 @@ namespace TurboCollections
 
     public class TurboLinkedStack<T>
     {
-        public TurboStack<Node> stack = new();
-
-        public Node Head;
-        public Node node2;
-        public Node node3;
-        
-
-        public void Test()
+        public Node<T> Head;
+       
+        public TurboLinkedStack(T headValue)
         {
-            Head = new Node(1);
-            node2 = new Node(2);
-            node3 = new Node(3);
-
-            Head.Next = node2;
-            node2.Next = node3;
+            Head = new Node<T>(headValue);
         }
-        
-        public TurboLinkedStack()
+
+        public void Remove()
         {
-            Head = new Node(4);
-            stack.Push(Head);
+            
         }
         
         public void PrintList()
         {
-            Node n = Head;
+            Node<T> n = Head;
             while (n != null) 
             {
-                Console.Write(n.data + " ");
+                Console.Write(n.someData + " ");
                 n = n.Next;
             }
         }
         
         
-        public void Insert()
+        public void Insert(T someValue)
         {
-            Node new_node = new Node(0);
+            Node<T> newNode = new Node<T>(someValue)
+            {
+                Next = Head
+            };
 
-            new_node.Next = Head;
-            Head = new_node;
+            Head = newNode;
         }
     }
 }
