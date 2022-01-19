@@ -4,32 +4,29 @@ namespace TurboCollections
 {
     public class TurboStack<T>
     {
-        private T [] _items = Array.Empty<T>();
-        private int _size = 0;
+        private T [] _items;
+        public int Count { get; private set; }
 
         public TurboStack()
         {
             _items = new T[8];
-            _size = 8;
+            Count = 8;
         }
 
-        public int Count()
-        {
-            return _size;
-        }
+        
 
         public void Push(T item)
         {
-            _size++;
+            Count++;
             
-            if (_size < _items.Length)
+            if (Count < _items.Length)
             {
-                _items[_size] = item;
+                _items[Count] = item;
             }
             
-            else if (_size > _items.Length)
+            else if (Count > _items.Length)
             {
-                T[] array = new T[_size * 2];
+                T[] array = new T[Count * 2];
 
                 for (int i = 0; i < _items.Length; i++)
                 {
@@ -37,21 +34,21 @@ namespace TurboCollections
                 }
 
                 _items = array;
-                _items[_size] = item;
-                _size *= 2;
+                _items[Count] = item;
+                Count *= 2;
             }
         }
 
         public T Peek()
         {
-            return _items[_size - 1];
+            return _items[Count - 1];
         }
 
         public T Pop()
         {
-            T item = _items[_size -1];
-            _items[_size -1] = default!;
-            _size--;
+            T item = _items[Count -1];
+            _items[Count -1] = default!;
+            Count--;
 
             return item;
         }
@@ -62,7 +59,7 @@ namespace TurboCollections
             {
                 _items[i] = default!;
             }
-            _size = 0;
+            Count = 0;
         }
     }
 }

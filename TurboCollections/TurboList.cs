@@ -9,11 +9,6 @@ namespace TurboCollections
     {
         private T [] _items = Array.Empty<T>();
         public int Count { get; private set; }
-        
-        public TurboList()
-        {
-
-        }
 
         void EnsureSize(int size)
         {
@@ -74,7 +69,7 @@ namespace TurboCollections
         {
             for (int i = 0; i < Count; i++)
             {
-                if (item.Equals(_items[i]))
+                if (Equals(item, _items[i]))
                     return i;
             }
 
@@ -95,6 +90,7 @@ namespace TurboCollections
         public bool Contains(T item)
         {
         //    return _items.Any(x => x.Equals(item));
+        //    return IndexOf(item) != -1;
         
             for (int i = 0; i < Count; i++)
             {
