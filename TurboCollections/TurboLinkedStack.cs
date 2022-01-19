@@ -3,17 +3,12 @@
 namespace TurboCollections
 {
 
-    public class Data
-    {
-        public int aValue;
-    }
-    
     public class Node
     {
         public Node Next;
         public Node Previous;
         public int data;
-
+        
         public Node(int d)
         {
             data = d;
@@ -60,14 +55,10 @@ namespace TurboCollections
         
         public void Insert()
         {
-            Node newNode = new Node(5);
-            if (stack.Count != 0)
-            {
-                Node nextNode = stack.Peek();
-                newNode.Next = stack.Peek();
-            }
+            Node new_node = new Node(0);
 
-            stack.Push(newNode);
+            new_node.Next = Head;
+            Head = new_node;
         }
     }
 }
