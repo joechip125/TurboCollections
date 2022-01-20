@@ -11,15 +11,22 @@ namespace GameStateHistory
         public static int nextLevel = 1;
 
         private static TurboLinkedStack<int> stack = new (1);
-        
+        private static TurboLinkedQueue<int> queue = new (1);
+        private static TurboQueue<int> aQueue = new TurboQueue<int>();
+
+
         static void Main()
         {
-           stack.Push(2);
-           stack.Push(3);
-           stack.Push(4);
-           stack.Push(5);
-           stack.Pop();
-           stack.PrintList();
+           queue.Enqueue(2);
+           queue.Enqueue(3);
+           queue.Enqueue(4);
+           queue.Enqueue(5);
+           queue.PrintList();
+           Console.WriteLine("    ");
+           queue.Dequeue();
+           queue.Dequeue();
+           queue.Dequeue();
+           queue.PrintList();
         }
 
    
