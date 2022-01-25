@@ -23,6 +23,7 @@ namespace TurboCollections
                 return _items[index];
             }
             
+            return _items[index];
             throw new System.Exception("index outside range of List");
         }
 
@@ -142,5 +143,6 @@ namespace TurboCollections
         {
             return GetEnumerator();
         }
+        
     }
 }

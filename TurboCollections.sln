@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStateHistory", "GameSta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurboShuntingYard", "TurboShuntingYard\TurboShuntingYard.csproj", "{89A860F6-925C-4749-8A3E-570FAFECCAAE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurboAlgorithms", "TurboAlgorithms\TurboAlgorithms.csproj", "{F43D9EC9-69BF-44FA-8AE5-12643D18993D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{89A860F6-925C-4749-8A3E-570FAFECCAAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89A860F6-925C-4749-8A3E-570FAFECCAAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89A860F6-925C-4749-8A3E-570FAFECCAAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F43D9EC9-69BF-44FA-8AE5-12643D18993D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F43D9EC9-69BF-44FA-8AE5-12643D18993D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F43D9EC9-69BF-44FA-8AE5-12643D18993D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F43D9EC9-69BF-44FA-8AE5-12643D18993D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
