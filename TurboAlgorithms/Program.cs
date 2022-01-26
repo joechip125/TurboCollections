@@ -6,8 +6,8 @@ namespace TurboAlgorithms
     {
         static void Main()
         {
-            int some = BinarySearch.BinarySearchSimple(97);
-            Console.WriteLine(some);
+            int some = BinarySearch.BinarySearchSimple(7);
+            Console.WriteLine($"The index {some}");
         }
     }
 }

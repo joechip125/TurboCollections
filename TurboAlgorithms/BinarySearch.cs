@@ -14,39 +14,32 @@ namespace TurboAlgorithms
         {
             int max = primes.Count - 1;
             int min = 0;
-            bool found = false;
-            int theGuess = primes.Count / 2;
-            
-            while (!found)
-            {
-                Console.WriteLine(min);
-                if (numToFind == primes.Get(theGuess))
-                {
-                    found = true;
-                }
+            int mid = 0;
 
-                else
+            while (min <= max)
+            {
+                mid = (min + max) / 2;
+                Console.WriteLine($"Current min {min}");
+                Console.WriteLine($"Current max {max}");
+                Console.WriteLine($"Current guess {mid}");
+
+                if (numToFind == primes.Get(mid)) 
                 {
-                    if (numToFind > primes.Get(theGuess))
-                    {
-                        min = theGuess + 1;
-                        int extra = (max - min) / 2;
-                        theGuess =  min + extra;
-                    }
-                    else if(numToFind < primes.Get(theGuess))
-                    {
-                        max = theGuess - 1;
-                        theGuess = max / 2;
-                    }
-                    else if (max < min || min > max)
-                    {
-                        found = true;
-                        theGuess = -1;
-                    }
+                    return ++mid;
+                } 
+                
+                else if (primes.Get(mid) < numToFind ) 
+                {
+                    min = mid + 1;
+                }
+                
+                else 
+                {
+                    max = mid - 1;
                 }
             }
 
-            return theGuess;
+            return mid;
         }
 
     }
