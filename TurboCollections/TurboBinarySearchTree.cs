@@ -70,11 +70,12 @@ namespace TurboCollections
         {
             if (parent != null)
             {
-                if (value == parent.Data) return parent;
+                if (value == parent.Data) 
+                    return parent;
                 if (value < parent.Data)
                     return Search(value, parent.LeftNode);
-                else
-                    return Search(value, parent.RightNode);
+                
+                return Search(value, parent.RightNode);
             }
 
             return null;
