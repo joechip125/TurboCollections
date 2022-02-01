@@ -13,20 +13,20 @@ namespace GameStateHistory
         private static TurboLinkedStack<int> stack = new (1);
         private static TurboLinkedQueue<int> queue = new (1);
         private static TurboQueue<int> aQueue = new TurboQueue<int>();
-
+        private static TurboBinarySearchTree binaryTree = new TurboBinarySearchTree();
 
         static void Main()
         {
-           queue.Enqueue(2);
-           queue.Enqueue(3);
-           queue.Enqueue(4);
-           queue.Enqueue(5);
-           queue.PrintList();
-           Console.WriteLine("    ");
-           queue.Dequeue();
-           queue.Dequeue();
-           queue.Dequeue();
-           queue.PrintList();
+            binaryTree.Insert(3);
+            binaryTree.Insert(27);
+            binaryTree.Insert(678);
+            binaryTree.Insert(89);
+            binaryTree.Insert(45);
+            binaryTree.Insert(126);
+            binaryTree.TraverseInOrder(binaryTree.RootNode);
+            binaryTree.Delete(89);
+            Console.WriteLine("    ");
+            binaryTree.TraverseInReverseOrder(binaryTree.RootNode);
         }
 
    
