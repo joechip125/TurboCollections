@@ -17,16 +17,11 @@ namespace GameStateHistory
 
         static void Main()
         {
-            binaryTree.Insert(3);
-            binaryTree.Insert(27);
-            binaryTree.Insert(678);
-            binaryTree.Insert(89);
-            binaryTree.Insert(45);
-            binaryTree.Insert(126);
-            binaryTree.TraverseInOrder(binaryTree.RootNode);
-            binaryTree.Delete(89);
-            Console.WriteLine("    ");
-            binaryTree.TraverseInReverseOrder(binaryTree.RootNode);
+            string someString = "Blerk";
+            var ch = someString.ToCharArray();
+            var code = ch[4].GetHashCode() % 8;
+            int someInt = 3466 % 7;
+            Console.WriteLine(code);
         }
 
    
